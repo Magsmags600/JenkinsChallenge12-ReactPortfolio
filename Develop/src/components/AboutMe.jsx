@@ -1,58 +1,21 @@
-import { useState } from 'react';
-import BucketForm from './Header';
-import Bucket from './Bucket';
+import React from 'react';
+import { Container, Card } from 'react-bootstrap';
 
-function BucketList() {
-  const [bucket, setBucket] = useState([]);
-
-  // Function to add a bucket list item
-  const addBucketItem = (item) => {
-    const newBucket = [item, ...bucket];
-    setBucket(newBucket);
-  };
-
-  // Function to mark bucket list item as complete
-  const completeBucketItem = (id) => {
-    let updatedBucket = bucket.map((item) => {
-      if (item.id === id) {
-        return { ...item, isComplete: !item.isComplete };
-      }
-      return item;
-    });
-
-    setBucket(updatedBucket);
-  };
-
-  // Function to remove bucket list item and update state
-  const removeBucketItem = (id) => {
-    const updatedBucket = bucket.filter((item) => item.id !== id);
-    setBucket(updatedBucket);
-  };
-
-  // Function to edit the bucket list item
-  const editBucketItem = (itemId, newValue) => {
-    if (!newValue.text) {
-      return;
-    }
-
-    // Map through the list of items, update the matching item
-    setBucket((prev) =>
-      prev.map((item) => (item.id === itemId ? newValue : item))
-    );
-  };
-
+const AboutMe = () => {
   return (
-    <div>
-      <h1>What is on your bucket list?</h1>
-      <BucketForm onSubmit={addBucketItem} />
-      <Bucket
-        bucket={bucket}
-        completeBucketItem={completeBucketItem}
-        removeBucketItem={removeBucketItem}
-        editBucketItem={editBucketItem}
-      />
-    </div>
+    <section id="about" className="bg-light py-5">
+      <Container>
+        <Card className="shadow-lg p-4">
+          <Card.Body>
+            <h2>About Me</h2>
+            <p>
+              I am a passionate developer with a strong background in React, JavaScript, and modern web development. My goal is to create sleek, responsive, and user-friendly web applications.
+            </p>
+          </Card.Body>
+        </Card>
+      </Container>
+    </section>
   );
-}
+};
 
-export default BucketList;
+export default AboutMe;
