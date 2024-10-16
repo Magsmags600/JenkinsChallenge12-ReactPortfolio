@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import './responsive.css';
+import '../responsive.css';  // Move up one directory level to access the src folder
+
 
 const LandingPage = () => {
   return (
