@@ -1,18 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import AboutMePage from './components/AboutMePage';
-import ProjectsPage from './components/ProjectsPage';
-import './responsive.css';
+import PortfolioPage from './components/PortfolioPage';
+import ContactPage from './components/ContactPage';
+import ResumePage from './components/ResumePage';
+
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/about" component={AboutMePage} />
-        <Route path="/projects" component={ProjectsPage} />
-      </Switch>
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<AboutMePage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
