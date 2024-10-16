@@ -1,97 +1,47 @@
-// import { useState } from 'react';
-// import BucketForm from './BucketForm';
+import React from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
-// function Bucket(props) {
-//   const [edit, setEdit] = useState({
-//     id: null,
-//     value: '',
-//     eagerness: '',
-//   });
-
-//   console.log(props.bucket);
-
-//   const submitUpdate = (value) => {
-
-//     // TODO: Write logic to call the editBucketItem prop with the supplied values
-
-//     // TODO: Set the key:value pairs in the `edit` object back to empty strings
-
-//   };
-
-//   // If the user is attempting to edit an item, render the bucket form with the edit variable passed as a prop
-//   if (edit.id) {
-//     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
-//   }
-
-//   return props.bucket.map((item, index) => (
-//     // TODO: Add a className of `bucket-row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
-//     // TODO: Add a key attribute set to the value of the index position
-//     // Hint: use a ternary operator
-//     <div className={} key={}>
-
-//       {/* TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument */}
-//       <div key={} onClick={}>
-//           {/* TODO: Add the item text here */}
-//       </div>
-//       <div className="icons">
-//         {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
-//         <p onClick={}> ✏️</p>
-//         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-//         <p onClick={}> 🗑️</p>
-//       </div>
-//     </div>
-//   ));
-// }
-
-// export default Bucket;
-import { useState } from 'react';
-import BucketForm from './Header';
-
-function Bucket(props) {
-  const [edit, setEdit] = useState({
-    id: null,
-    value: '',
-    eagerness: '',
-  });
-
-  const submitUpdate = (value) => {
-    // Call the editBucketItem prop with the updated values (id, value, eagerness)
-    props.editBucketItem(edit.id, value);
-
-    // Reset the `edit` state back to default
-    setEdit({
-      id: null,
-      value: '',
-      eagerness: '',
-    });
-  };
-
-  // If the user is editing an item, render the form with current values
-  if (edit.id) {
-    return <BucketForm edit={edit} onSubmit={submitUpdate} />;
+const projects = [
+  {
+    name: "Project One",
+    description: "A brief description of the first project.",
+    link: "#"
+  },
+  {
+    name: "Project Two",
+    description: "A description of the second project.",
+    link: "#"
+  },
+  {
+    name: "Project Three",
+    description: "This is the new project you are adding.",
+    link: "#"
   }
+];
 
-  return props.bucket.map((item, index) => (
-    <div
-      className={`bucket-row ${item.isComplete ? 'complete' : ''} ${item.eagerness}`}
-      key={index}
-    >
-      {/* Complete the item on click */}
-      <div key={item.id} onClick={() => props.completeBucketItem(item.id)}>
-        {item.text}
-      </div>
-      <div className="icons">
-        {/* Edit button */}
-        <p onClick={() => setEdit({ id: item.id, value: item.text, eagerness: item.eagerness })}>
-          ✏️
-        </p>
-        {/* Delete button */}
-        <p onClick={() => props.removeBucketItem(item.id)}>
-          🗑️
-        </p>
-      </div>
-    </div>
-  ));
-}
+const Projects = () => {
+  return (
+    <section id="projects" className="py-5 custom-background">
+      <Container>
+        <h2 className="text-center mb-4" style={{ color: 'hsl(295, 70%, 55%)' }}>Projects</h2>
+        <Row>
+          {projects.map((project, index) => (
+            <Col md={6} lg={4} key={index} className="mb-4">
+              <Card className="shadow-sm custom-card" style={{ backgroundColor: 'hsl(278, 100%, 73%)' }}>
+                <Card.Body>
+                  <Card.Title>{project.name}</Card.Title>
+                  <Card.Text>{project.description}</Card.Text>
+                  <Button variant="light" href={project.link}>
+                    View Project
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </section>
+  );
+};
 
-export default Bucket;
+export default Projects;
