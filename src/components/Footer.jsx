@@ -1,17 +1,14 @@
 import React from 'react';
-import './Footer.css';
 
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-      <div className="footer-links">
-        <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer style={{ backgroundColor: '#f28482', color: '#fff', padding: '20px' }}>
+    <p>© 2024 My Portfolio</p>
+    <ul style={{ listStyleType: 'none', padding: 0 }}>
+      <li><a href="https://github.com/yourprofile" style={{ color: '#fff' }}>GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/yourprofile" style={{ color: '#fff' }}>LinkedIn</a></li>
+      <li><a href="https://stackoverflow.com/users/yourprofile" style={{ color: '#fff' }}>Stack Overflow</a></li>
+    </ul>
+  </footer>
+);
 
 export default Footer;

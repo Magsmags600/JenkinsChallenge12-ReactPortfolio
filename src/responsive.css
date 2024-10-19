@@ -1,35 +1,18 @@
-/* Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
 
-/* Base styles */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+  .container {
+    padding: 0 15px;
   }
-  
-  .custom-background {
-    background-color: hsl(270, 65%, 15%);
-    padding: 20px;
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
   }
-  
-  .custom-card {
-    background-color: hsl(278, 100%, 73%);
-    color: white;
-    border: none;
-    padding: 20px;
+
+  .card {
+    width: 100%;
   }
-  
-  /* Media Query for small screens (up to 768px) */
-  @media (max-width: 768px) {
-    .custom-card {
-      background-color: hsl(295, 70%, 55%);
-    }
-  
-    .custom-background {
-      padding: 10px;
-    }
-  
-    .custom-card .btn {
-      width: 100%;
-    }
-  }
-  
+}
