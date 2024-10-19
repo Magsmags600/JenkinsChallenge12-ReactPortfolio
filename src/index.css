@@ -1,40 +1,23 @@
-/* Global Styles */
-:root {
-  --background-color: #f9f9f9;  /* Light background */
-  --text-color: #333333;        /* Darker text for better contrast */
-  --primary-color: #007bff;     /* Adjust primary colors if needed */
-  --secondary-color: #6c757d;   /* Adjust secondary colors */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f6f4d2;
+  color: #333;
 }
 
-/* Apply the styles */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: 'Arial', sans-serif;  /* Ensure a readable font */
+h1, h2, h3, h4, h5, h6 {
+  color: #a44a3f;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #f19c79;
 }
 
 a {
-  color: var(--primary-color);
+  text-decoration: none;
+  color: #a44a3f;
 }
 
 a:hover {
-  color: var(--secondary-color);
-}
-
-.section-title {
-  color: var(--text-color);
-}
-
-.about-me-section {
-  background-color: var(--background-color); /* Ensure section background matches */
-  color: var(--text-color);                  /* Darker text */
-}
-
-.custom-background {
-  background-color: var(--background-color);
-}
-
-footer {
-  background-color: var(--primary-color);
-  color: white;
+  color: #d4e09b;
 }
