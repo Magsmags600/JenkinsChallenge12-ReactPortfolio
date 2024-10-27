@@ -1,9 +1,14 @@
 import React from 'react';
+import yourImage from '/assets/headshot.jpg'; // Replace with your actual path
 
 const AboutMe = () => (
   <div style={{ backgroundColor: '#f6bd60', color: '#333', padding: '20px' }}>
     <h2>About Me</h2>
-    <div style={{ backgroundColor: '#84a59d', height: '150px', width: '150px', borderRadius: '50%', marginBottom: '20px' }}></div>
+    <img 
+      src={yourImage} 
+      alt="Your Portrait" 
+      style={{ height: '150px', width: '150px', borderRadius: '50%', marginBottom: '20px' }} 
+    />
     <p>
       With a strong foundation in management, law, and taxation, I have pursued a diverse educational journey that includes a Bachelors of Science, a Juris Doctorate, and an LLM in Taxation. Currently, I’m expanding my skill set by completing a Full Stack Coding Bootcamp, which enables me to combine legal counsel, business management, product development, and risk mitigation with hands-on programming and systems integration. My goal is to leverage this multidisciplinary expertise to solve complex business challenges, ensuring success through strategic legal counseling and business acumen.
     </p>
